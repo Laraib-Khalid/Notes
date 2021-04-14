@@ -38,6 +38,12 @@ namespace Notes.Views
             }
         }
 
+        async void OnAddClicked(object sender, EventArgs e)
+        {
+            // Navigate to the NoteEntryPage, without passing any data.
+            await Shell.Current.GoToAsync(nameof(NoteEntryPage));
+        }
+
         // Before sqlite implementation
         //protected override void OnAppearing()
         //{
@@ -56,7 +62,7 @@ namespace Notes.Views
         //            Date = File.GetCreationTime(filename)
         //        });
         //    }
-
+       
         //    // Set the data source for the CollectionView to a
         //    // sorted collection of notes.
         //    collectionView.ItemsSource = notes
@@ -64,13 +70,7 @@ namespace Notes.Views
         //        .ToList();
         //}
 
-        async void OnAddClicked(object sender, EventArgs e)
-        {
-            // Navigate to the NoteEntryPage, without passing any data.
-            await Shell.Current.GoToAsync(nameof(NoteEntryPage));
-        }
 
-        // Before sqlite implementation
         //async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         //{
         //    if (e.CurrentSelection != null)
